@@ -1,42 +1,38 @@
-# front-end-assignment-1
+# Nebulon-A
 
-This template should help get you started developing with Vue 3 in Vite.
+A space article site for curious beginners. Long-form pieces organised into
+ordered **learning paths**, so a reader can work through a topic instead of
+guessing what to read next.
 
-## Recommended IDE Setup
+Built with Vue 3, Vite and Vue Router. Phase 1 of the TUS Front-End brief:
+research, design system, Figma library, wireframes and this prototype.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Setup
 
-## Recommended Browser Setup
+Requires Node 18+.
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
+```bash
 npm install
+npm run dev      # http://localhost:5173
+npm run build    # production build to dist/
 ```
 
-### Compile and Hot-Reload for Development
+The site runs only from static data in `src/data`.
 
-```sh
-npm run dev
-```
+## Design
 
-### Type-Check, Compile and Minify for Production
+Figma file: https://www.figma.com/file/REPLACE_ME
 
-```sh
-npm run build
-```
+Fourteen components, ten desktop page sketches and eleven mobile frames, with the
+tokens documented in [Design System.md](docs/Design-System.md).
+
+## Notes
+
+- Twenty-four articles over six categories. **Notice: AI was used to draft these articles.**
+- Photography from the NASA media library with a credit line on every image.
+- Read progress is session-only and clears on refresh, by design.
+- The admin screens are local state only - no persistence, no auth.
+
+## Author
+
+Levente Alfoldy - TUS, Front-End Development, November 2026.
