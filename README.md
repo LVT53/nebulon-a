@@ -21,10 +21,10 @@ The site runs only from static data in `src/data`.
 
 ## Design
 
-Figma file: https://www.figma.com/file/REPLACE_ME
+Figma file: [Figma project link](https://www.figma.com/design/RBLxVq1VPJBRt0iHAWyYGd/Nebulon-A?node-id=1-587&t=crGDqDc1cMFkqgIc-1)
 
 Fourteen components, ten desktop page sketches and eleven mobile frames, with the
-tokens documented in [Design System.md](docs/Design-System.md).
+tokens documented in [guides/design-system.md](guides/design-system.md).
 
 ## Notes
 
@@ -35,4 +35,4 @@ tokens documented in [Design System.md](docs/Design-System.md).
 
 ## Author
 
-Levente Alfoldy - TUS, Front-End Development, November 2026.
+Levente Alfoldy - TUS, Front-End Development module, November 2026.
