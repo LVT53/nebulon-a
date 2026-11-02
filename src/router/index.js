@@ -19,7 +19,7 @@ const routes = [
   { path: '/paths/:slug', name: 'path', component: PathView },
   { path: '/admin', name: 'admin', component: AdminListView },
   { path: '/admin/article/:id', name: 'admin-article', component: AdminFormView },
-  // Catch-all last: anything that matched nothing lands here.
+  // Must stay last.
   { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFoundView },
 ]
 

@@ -1,6 +1,5 @@
 <script setup>
 defineProps({
-  /** primary | secondary | ghost */
   variant: { type: String, default: 'primary' },
   type: { type: String, default: 'button' },
 })

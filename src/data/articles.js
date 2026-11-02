@@ -1,9 +1,4 @@
-/**
- * Order: newest first.
- *
- * Six articles are written out in full and carry two figures each. The rest run
- * short with a list or a quote, which keeps every block type visible in the build and keeps me from downloading so many NASA images.
- */
+// Body blocks: { type: 'p' | 'h2' | 'quote',  text }  |  { type: 'list', items[] }  |  { type: 'figure', src, caption, credit }
 export const articles = [
   {
     id: 'black-hole-time',

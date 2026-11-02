@@ -1,5 +1,4 @@
 :root {
-  /* Colour */
   --colour-background: #0b0b0f;
   --colour-surface: #16161c;
   --colour-surface-hover: #1f1f27;
@@ -15,11 +14,9 @@
   --colour-read: #4ade80;
   --colour-danger: #f87171;
 
-  /* Type families */
   --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
   --font-reading: 'Source Sans 3', Georgia, serif;
 
-  /* Type scale */
   --type-hero: 39px;
   --type-hero-line: 45px;
   --type-page: 31px;
@@ -37,7 +34,6 @@
   --type-meta: 12px;
   --type-meta-line: 19px;
 
-  /* Spacing roles */
   --space-micro: 8px;
   --space-control: 16px;
   --space-stack: 24px;
@@ -46,17 +42,14 @@
   --space-block: 56px;
   --space-section: 96px;
 
-  /* Layout */
   --layout-container: 1200px;
   --layout-gutter: 20px;
 
-  /* Shape */
   --radius-card: 14px;
   --radius-image: 12px;
   --radius-control: 10px;
   --radius-chip: 8px;
 
-  /* Motion */
   --transition-quick: 150ms ease-out;
 }
 

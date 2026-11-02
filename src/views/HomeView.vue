@@ -15,7 +15,6 @@ const visibleArticles = computed(() =>
   showAll.value ? gridArticles : gridArticles.slice(0, 6),
 )
 
-/** Total reading time for a path, summed from the articles it points at. */
 function pathMinutes(path) {
   return path.steps.reduce((total, id) => {
     const article = articles.find((entry) => entry.id === id)
@@ -26,7 +25,6 @@ function pathMinutes(path) {
 
 <template>
   <div>
-    <!-- Latest: one feature plus three compact rows -->
     <section class="section">
       <div class="container">
         <div class="section-head">
@@ -47,7 +45,6 @@ function pathMinutes(path) {
       </div>
     </section>
 
-    <!-- Learning paths -->
     <section class="section--tight">
       <div class="container">
         <div class="section-head">
@@ -72,7 +69,6 @@ function pathMinutes(path) {
       </div>
     </section>
 
-    <!-- All articles -->
     <section class="section">
       <div class="container">
         <div class="section-head">

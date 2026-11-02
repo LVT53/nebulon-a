@@ -78,8 +78,6 @@ li {
   border-radius: 2px;
 }
 
-/* Layout helpers */
-
 .container {
   width: 100%;
   max-width: var(--layout-container);
@@ -94,8 +92,6 @@ li {
 .section--tight {
   padding-block: var(--space-block);
 }
-
-/* Type helpers */
 
 .eyebrow {
   font-family: var(--font-reading);

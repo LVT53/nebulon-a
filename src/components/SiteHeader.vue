@@ -75,13 +75,11 @@ import { categories } from '@/data'
   border-bottom-color: var(--colour-hairline);
 }
 
-/* Current page: the amber underline from the Figma NavLink component. */
 .nav-link.router-link-active {
   color: var(--colour-text-primary);
   border-bottom-color: var(--colour-accent);
 }
 
-/* The mobile menu arrives in phase 2. */
 @media (max-width: 899px) {
   .nav {
     display: none;

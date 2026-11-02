@@ -5,7 +5,8 @@ ordered **learning paths**, so a reader can work through a topic instead of
 guessing what to read next.
 
 Built with Vue 3, Vite and Vue Router. Phase 1 of the TUS Front-End brief:
-research, design system, Figma library, wireframes and this prototype.
+research, design system, Figma library, wireframes and this prototype — the
+Home and Article views, built from the shared components.
 
 ## Setup
 
@@ -24,7 +25,15 @@ The site runs only from static data in `src/data`.
 Figma file: [Figma project link](https://www.figma.com/design/RBLxVq1VPJBRt0iHAWyYGd/Nebulon-A?node-id=1-587&t=crGDqDc1cMFkqgIc-1)
 
 Fourteen components, ten desktop page sketches and eleven mobile frames, with the
-tokens documented in [guides/design-system.md](guides/design-system.md).
+tokens documented in [docs/guides/design-system.md](docs/guides/design-system.md).
+
+## Docs
+
+- [Research summary](docs/guides/research-summary.md)
+- [Persona](docs/guides/persona.md)
+- [Content plan](docs/guides/content-plan.md)
+- [Design system](docs/guides/design-system.md)
+- [Wireframes](docs/wireframes/) — five hand-drawn sheets, photographed
 
 ## Notes
 
