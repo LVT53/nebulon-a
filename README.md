@@ -33,12 +33,14 @@ tokens documented in [docs/guides/design-system.md](docs/guides/design-system.md
 - [Persona](docs/guides/persona.md)
 - [Content plan](docs/guides/content-plan.md)
 - [Design system](docs/guides/design-system.md)
-- [Wireframes](docs/wireframes/) — five hand-drawn sheets, photographed
+- [Wireframes](docs/wireframes/)
 
 ## Notes
 
 - Twenty-four articles over six categories. **Notice: AI was used to draft these articles.**
-- Photography from the NASA media library with a credit line on every image.
+- Photography from the NASA media library and Pexels on path articles and category
+  lead cards; other cards use the placeholders described in the
+  [Content plan](docs/guides/content-plan.md). Credit lines live in the data.
 - Read progress is session-only and clears on refresh, by design.
 - The admin screens are local state only - no persistence, no auth.
 

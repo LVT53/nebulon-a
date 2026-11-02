@@ -43,14 +43,14 @@ A path is reachable from three places:
 | Field | Notes |
 | --- | --- |
 | title |  |
-| slug | used in the URL |
+| id, slug | id is the admin route param, slug is the URL |
 | category | one of the six |
-| imageUrl, imageCredit | NASA media requires the credit line |
+| image, credit | NASA media requires the credit line |
 | excerpt | two lines, shown on the card |
 | gist | outcome bullets and new words, see below |
 | body | around 400 words, short on purpose |
 | date |  |
-| author |  |
+| author | site-wide in `src/data/author.js`, not per article |
 | readingTime | minutes, shown on every card |
 | pathId, step | empty on standalone articles |
 | read | boolean, local state only |
