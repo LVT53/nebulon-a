@@ -1,35 +1,125 @@
-@import './base.css';
+@import './tokens.css';
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-a,
-.green {
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--colour-background);
+  color: var(--colour-text-primary);
+  font-family: var(--font-reading);
+  font-size: var(--type-body);
+  line-height: var(--type-body-line);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--type-page);
+  line-height: var(--type-page-line);
+}
+
+h2 {
+  font-size: var(--type-section);
+  line-height: var(--type-section-line);
+  font-weight: 500;
+}
+
+h3 {
+  font-size: var(--type-card);
+  line-height: var(--type-card-line);
+  font-weight: 500;
+}
+
+p {
+  margin: 0 0 var(--space-stack);
+}
+
+a {
+  color: inherit;
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+ul {
+  margin: 0 0 var(--space-stack);
+  padding-left: 20px;
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+li {
+  margin-bottom: var(--space-micro);
+}
+
+:focus-visible {
+  outline: 2px solid var(--colour-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Layout helpers */
+
+.container {
+  width: 100%;
+  max-width: var(--layout-container);
+  margin-inline: auto;
+  padding-inline: var(--layout-gutter);
+}
+
+.section {
+  padding-block: var(--space-section);
+}
+
+.section--tight {
+  padding-block: var(--space-block);
+}
+
+/* Type helpers */
+
+.eyebrow {
+  font-family: var(--font-reading);
+  font-size: var(--type-meta);
+  line-height: var(--type-meta-line);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--colour-text-secondary);
+}
+
+.meta {
+  font-size: var(--type-meta);
+  line-height: var(--type-meta-line);
+  color: var(--colour-text-secondary);
+}
+
+.lead {
+  font-size: var(--type-reading);
+  line-height: var(--type-reading-line);
+  color: var(--colour-text-body);
+}
+
+.rule {
+  border: 0;
+  border-top: 1px solid var(--colour-hairline);
+  margin: 0;
 }

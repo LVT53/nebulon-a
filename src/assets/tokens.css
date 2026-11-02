@@ -1,0 +1,81 @@
+:root {
+  /* Colour */
+  --colour-background: #0b0b0f;
+  --colour-surface: #16161c;
+  --colour-surface-hover: #1f1f27;
+  --colour-surface-pressed: #26262f;
+  --colour-hairline: #2a2a33;
+  --colour-text-primary: #f4f4f5;
+  --colour-text-body: #d4d4d9;
+  --colour-text-secondary: #a1a1aa;
+  --colour-accent: #ffb454;
+  --colour-accent-hover: #ffc06b;
+  --colour-accent-pressed: #f2a23e;
+  --colour-on-accent: #0b0b0f;
+  --colour-read: #4ade80;
+  --colour-danger: #f87171;
+
+  /* Type families */
+  --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --font-reading: 'Source Sans 3', Georgia, serif;
+
+  /* Type scale */
+  --type-hero: 39px;
+  --type-hero-line: 45px;
+  --type-page: 31px;
+  --type-page-line: 36px;
+  --type-section: 25px;
+  --type-section-line: 29px;
+  --type-card: 20px;
+  --type-card-line: 23px;
+  --type-ui: 16px;
+  --type-ui-line: 20px;
+  --type-reading: 18px;
+  --type-reading-line: 31px;
+  --type-body: 16px;
+  --type-body-line: 26px;
+  --type-meta: 12px;
+  --type-meta-line: 19px;
+
+  /* Spacing roles */
+  --space-micro: 8px;
+  --space-control: 16px;
+  --space-stack: 24px;
+  --space-card: 36px;
+  --space-gutter: 40px;
+  --space-block: 56px;
+  --space-section: 96px;
+
+  /* Layout */
+  --layout-container: 1200px;
+  --layout-gutter: 20px;
+
+  /* Shape */
+  --radius-card: 14px;
+  --radius-image: 12px;
+  --radius-control: 10px;
+  --radius-chip: 8px;
+
+  /* Motion */
+  --transition-quick: 150ms ease-out;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --layout-gutter: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --type-hero: 31px;
+    --type-hero-line: 37px;
+    --type-page: 26px;
+    --type-page-line: 31px;
+    --type-section: 21px;
+    --type-section-line: 26px;
+    --space-section: 56px;
+    --space-card: 24px;
+    --space-gutter: 24px;
+  }
+}
