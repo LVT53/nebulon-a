@@ -90,7 +90,7 @@ Photography replaces decoration everywhere.
 Fourteen components, all built and all bound to the tokens above.
 
 **Sets**: Button (3 × 5 states), Chip (4), FeatureCard (2), CompactCard (2), FormField (3), PathNode (3), PathCard (2), NavLink (3), ConfirmDialog (2 widths).
-**Singles**: Header, Footer, ArticleGrid, RelatedRow, GistBox, PathFooter.
+**Singles**: SiteHeader, SiteFooter, ArticleGrid, RelatedRow, GistBox, PathFooter.
 
 - **Button** — primary amber, secondary surface with hairline, ghost label only. Hover and pressed bound to accent-hover, accent-pressed, surface-pressed. Labels hug with a 148px minimum.
 - **Chip** — category chips are outline; filter chips take a surface fill and a hairline so they read as controls, not labels. Amber stays the only active weight in a filter bar. Focus is a 2px accent stroke, since the chip sits too tight for an offset ring.
@@ -103,7 +103,7 @@ Fourteen components, all built and all bound to the tokens above.
 - **PathCard** — 580 × 264: name, one line of description, progress bar and length, 220px photograph on the right edge.
 - **NavLink** — default secondary, hover steps to primary with a hairline underline, the current page carries the amber underline. Sized by its label.
 - **ConfirmDialog** — destructive confirmation at 480 and 350. Names the thing being deleted, states it cannot be undone, Cancel before the danger action.
-- **Header / Footer** — shared furniture with a 1200 inner column, so every page lines up whatever the frame width. Footer is 40 tall: wordmark, About, Admin, RSS.
+- **SiteHeader / SiteFooter** — shared furniture with a 1200 inner column, so every page lines up whatever the frame width. Footer is 40 tall: wordmark, About, Admin, RSS.
 
 Focus is a 2px amber ring with a 2px offset everywhere except the chip. Touch targets stay at 44px.
 
