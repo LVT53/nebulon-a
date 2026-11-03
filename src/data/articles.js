@@ -61,13 +61,13 @@ export const articles = [
         src: '/img/figures/black-hole-time-1.jpg',
         caption:
           'Matter piling into a disc around a black hole. The dark patch is the last light that could still escape.',
-        credit: 'NASA/JPL-Caltech',
+        credit: 'ESA/ATG medialab',
       },
       {
         type: 'figure',
         src: '/img/figures/black-hole-time-2.jpg',
         caption: 'The same region in infrared, where the dust glows through the gas.',
-        credit: 'NASA/ESA/STScI',
+        credit: 'NASA/JPL-Caltech/UCLA',
       },
     ],
   },
@@ -81,7 +81,7 @@ export const articles = [
     excerpt:
       'Eight telescopes across four continents turned a patch of sky into a single camera.',
     image: '/img/photographing-a-shadow.jpg',
-    credit: 'NASA/JPL-Caltech',
+    credit: 'NASA/JPL-Caltech/IPAC/Event Horizon Telescope Collaboration',
     pathId: 'black-holes',
     step: 2,
     gist: {
@@ -122,7 +122,7 @@ export const articles = [
     excerpt:
       'Europa is the most likely place for life in the solar system, and it is wrapped in ice.',
     image: '/img/jupiter-moons.jpg',
-    credit: 'NASA/JPL-Caltech/SwRI/MSSS',
+    credit: 'NASA/JPL/Ames Research Center',
     pathId: 'our-solar-system',
     step: 1,
     gist: {
@@ -170,13 +170,13 @@ export const articles = [
         src: '/img/figures/jupiter-moons-1.jpg',
         caption:
           'Europa, photographed by Juno. The dark streaks are fractures in the ice shell.',
-        credit: 'NASA/JPL-Caltech/SwRI/MSSS',
+        credit: 'NASA/JPL-Caltech/SWRI/MSSS',
       },
       {
         type: 'figure',
         src: '/img/figures/jupiter-moons-2.jpg',
         caption: 'The four Galilean moons to scale, from Io outward to Callisto.',
-        credit: 'NASA/JPL-Caltech',
+        credit: 'NASA/JPL/DLR',
       },
     ],
   },
@@ -189,7 +189,7 @@ export const articles = [
     readingTime: 1,
     excerpt: 'The horizon is not a surface. It is the last place where leaving is still possible.',
     image: '/img/event-horizon.jpg',
-    credit: 'NASA/JPL-Caltech',
+    credit: 'NASA',
     pathId: 'black-holes',
     step: 3,
     gist: {
@@ -228,7 +228,7 @@ export const articles = [
     readingTime: 1,
     excerpt: 'A rocket does not fly. It is pushed, and the difference matters.',
     image: '/img/rockets-go-up.jpg',
-    credit: 'NASA',
+    credit: 'NASA/JPL-Caltech',
     pathId: 'going-to-space',
     step: 1,
     gist: {
@@ -355,7 +355,7 @@ export const articles = [
         type: 'figure',
         src: '/img/figures/first-two-minutes-2.jpg',
         caption: 'Staging, seen from a tracking camera. The empty stage falls away first.',
-        credit: 'NASA',
+        credit: 'NASA/JPL-Caltech',
       },
     ],
   },
@@ -368,7 +368,7 @@ export const articles = [
     readingTime: 1,
     excerpt: 'Binoculars beat a cheap telescope, and your eyes beat both for some things.',
     image: '/img/no-telescope.jpg',
-    credit: 'NASA',
+    credit: 'NASA/JPL-Caltech/UCLA',
     gist: {
       text: 'A borrowed pair of binoculars will show you more tonight than a cheap telescope will show you next month.',
       terms: [
@@ -408,7 +408,7 @@ export const articles = [
     excerpt:
       'To see the first galaxies you have to look in infrared, and to do that you have to keep the mirror cold.',
     image: '/img/furthest-telescope.jpg',
-    credit: 'NASA/ESA/STScI',
+    credit: 'NASA',
     pathId: 'reading-the-universe',
     step: 1,
     gist: {
@@ -454,13 +454,13 @@ export const articles = [
         type: 'figure',
         src: '/img/figures/furthest-telescope-1.jpg',
         caption: 'The first deep field. Almost every point in the frame is a galaxy.',
-        credit: 'NASA/ESA/STScI',
+        credit: 'NASA/JPL/STScI Hubble Deep Field Team',
       },
       {
         type: 'figure',
         src: '/img/figures/furthest-telescope-2.jpg',
         caption: 'The sunshield during a deployment test, five layers thin enough to flex.',
-        credit: 'NASA/Chris Gunn',
+        credit: 'NASA',
       },
     ],
   },
@@ -649,7 +649,7 @@ export const articles = [
     readingTime: 1,
     excerpt: 'Rings are not rare. They are just temporary, which is why we only see four.',
     image: '/img/rings.jpg',
-    credit: 'NASA/JPL-Caltech',
+    credit: 'NASA/JPL',
     pathId: 'our-solar-system',
     step: 2,
     gist: {
@@ -767,7 +767,7 @@ export const articles = [
     readingTime: 1,
     excerpt: 'An ion engine produces about as much thrust as a sheet of paper resting on your hand.',
     image: '/img/ion-engines.jpg',
-    credit: 'NASA/JPL-Caltech',
+    credit: 'NASA',
     pathId: 'reading-the-universe',
     step: 3,
     gist: {
@@ -808,7 +808,7 @@ export const articles = [
     readingTime: 1,
     excerpt: 'Uranus orbits on its side, which breaks almost every assumption about how planets work.',
     image: '/img/uranus.jpg',
-    credit: 'NASA/JPL-Caltech',
+    credit: 'NASA/Scientific Visualization Studio/Tom Bridgman',
     pathId: 'our-solar-system',
     step: 3,
     gist: {
@@ -844,7 +844,7 @@ export const articles = [
     readingTime: 1,
     excerpt: 'The furthest thing you can see without a telescope is two and a half million years away.',
     image: '/img/andromeda.jpg',
-    credit: 'NASA',
+    credit: 'NASA/JPL/California Institute of Technology',
     gist: {
       text: 'The faintest thing most people will ever see with their own eyes is a galaxy, and it looks like a smudge that will not focus.',
       terms: [
@@ -948,7 +948,7 @@ export const articles = [
     readingTime: 1,
     excerpt: 'Mars had rivers. Then it had a magnetic field problem.',
     image: '/img/mars-water.jpg',
-    credit: 'NASA/JPL-Caltech',
+    credit: 'NASA/JPL-Caltech/UA/JHUAPL',
     pathId: 'our-solar-system',
     step: 4,
     gist: {
@@ -988,7 +988,7 @@ export const articles = [
     readingTime: 1,
     excerpt: 'A rover drives itself, slowly, because nobody can steer it in real time.',
     image: '/img/rover-driving.jpg',
-    credit: 'NASA/JPL-Caltech',
+    credit: 'NASA/JPL-Caltech/Cornell',
     pathId: 'reading-the-universe',
     step: 4,
     gist: {
@@ -1028,7 +1028,7 @@ export const articles = [
     readingTime: 1,
     excerpt: 'Funding was cut twice, the window was missed, and it flew anyway.',
     image: '/img/almost-mission.jpg',
-    credit: 'NASA',
+    credit: 'NASA/JPL-Caltech/Ball Aerospace',
     gist: {
       text: 'The spacecraft spent a year in a clean room while the team argued about whether the science was worth the cost.',
       terms: [

@@ -38,9 +38,9 @@ tokens documented in [docs/guides/design-system.md](docs/guides/design-system.md
 ## Notes
 
 - Twenty-four articles over six categories. **Notice: AI was used to draft these articles.**
-- Photography from the NASA media library and Pexels on path articles and category
-  lead cards; other cards use the placeholders described in the
-  [Content plan](docs/guides/content-plan.md). Credit lines live in the data.
+- Photography is real: every image was pulled from the NASA Image Library. Credit lines
+  live in the data, and [docs/image-credits.tsv](docs/image-credits.tsv) records the
+  search, the record id and the credit behind each file.
 - Read progress is session-only and clears on refresh, by design.
 - The admin screens are local state only - no persistence, no auth.
 

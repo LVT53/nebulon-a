@@ -84,7 +84,7 @@ A Filament-style layout built in Vue: sidebar, article table, add/edit form. The
 
 ## Content production
 
-Articles are AI-drafted, stated in the README. Images come from the NASA media library and Pexels. Real images appear on every path article and the first card of each category, with visual placeholders elsewhere/or just text.
+Articles are AI-drafted, stated in the README. Imagery is real: 24 hero images and 12 figures pulled from the NASA Image Library, with the search that found each one, its record id and its credit line recorded in `docs/image-credits.tsv`, and the credit line mirrored into the article data. One figure credits ESA rather than NASA, because that is what its record says.
 
 ## Wireframes
 
