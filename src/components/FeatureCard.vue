@@ -46,6 +46,11 @@ function categoryLabel(slug) {
   object-fit: cover;
   border-radius: var(--radius-image);
   background: var(--colour-surface-hover);
+  transition: all ease-out 200ms;
+}
+
+.image:hover {
+  opacity: .7;
 }
 
 .body {

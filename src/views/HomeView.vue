@@ -143,6 +143,10 @@ function pathMinutes(path) {
   margin-bottom: 2px;
 }
 
+.path-text p {
+  margin-bottom: 0;
+}
+
 .path-track {
   display: none;
   width: 120px;

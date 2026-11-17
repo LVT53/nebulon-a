@@ -60,6 +60,7 @@ defineProps({
 
 .btn--ghost {
   background: transparent;
+  border-color: var(--colour-hairline);
   color: var(--colour-text-primary);
 }
 
