@@ -1,3 +1,136 @@
+<script setup>
+import { reactive } from 'vue'
+import { useRouter, RouterLink } from 'vue-router'
+import { categories } from '@/data'
+import { store } from '@/stores/articles.js'
+import AppButton from '@/components/AppButton.vue'
+
+const router = useRouter()
+
+const draft = reactive({
+  title: '',
+  excerpt: '',
+  category: 'deep-space',
+  date: new Date().toISOString().slice(0, 10),
+  readingTime: 1,
+  image: '/img/uranus.jpg',
+  credit: '',
+  body: '',
+})
+
+function toBody(text) {
+  return text
+      .split(/\n\s*\n/)
+      .map((paragraph) => paragraph.trim())
+      .filter(Boolean)
+      .map((paragraph) => ({ type: 'p', text: paragraph }))
+}
+
+function save() {
+  store.create({
+    title: draft.title,
+    excerpt: draft.excerpt,
+    category: draft.category,
+    date: draft.date,
+    readingTime: draft.readingTime,
+    image: draft.image,
+    credit: draft.credit,
+    body: toBody(draft.body),
+  })
+  router.push('/admin')
+}
+</script>
+
 <template>
-  <h1>Admin · article</h1>
+  <div class="container section">
+    <p class="eyebrow">Admin</p>
+    <h1>New article</h1>
+
+    <form class="form" @submit.prevent="save">
+      <h2>Basics</h2>
+
+      <label for="title">Title</label>
+      <input id="title" v-model="draft.title" type="text" />
+
+      <label for="excerpt">Excerpt</label>
+      <textarea id="excerpt" v-model="draft.excerpt" rows="2"></textarea>
+
+      <label for="category">Category</label>
+      <select id="category" v-model="draft.category">
+        <option v-for="category in categories" :key="category.id" :value="category.slug">
+          {{ category.label }}
+        </option>
+      </select>
+
+      <label for="date">Published</label>
+      <input id="date" v-model="draft.date" type="date" />
+
+      <label for="readingTime">Reading time (minutes)</label>
+      <input id="readingTime" v-model.number="draft.readingTime" type="number" min="1" />
+
+      <h2>Media</h2>
+
+      <label for="image">Image path</label>
+      <input id="image" v-model="draft.image" type="text" />
+      <p class="meta">Hint for myself: /img/uranus.jpg, /img/voyager.jpg or /img/rings.jpg</p>
+
+      <label for="credit">Credit</label>
+      <input id="credit" v-model="draft.credit" type="text" />
+
+      <h2>Body</h2>
+
+      <label for="body">Article text</label>
+      <textarea id="body" v-model="draft.body" rows="10"></textarea>
+      <p class="meta">Leave a blank line between paragraphs.</p>
+
+      <div class="actions">
+        <AppButton type="submit">Save article</AppButton>
+        <AppButton variant="secondary" @click="router.push('/admin')">Cancel</AppButton>
+      </div>
+    </form>
+  </div>
 </template>
+
+<style scoped>
+.form {
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-micro);
+}
+
+h2 {
+  margin-top: var(--space-block);
+  margin-bottom: var(--space-micro);
+}
+
+label {
+  margin-top: var(--space-control);
+  font-size: var(--type-meta);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--colour-text-secondary);
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  color: var(--colour-text-primary);
+  background: var(--colour-surface);
+  border: 1px solid var(--colour-hairline);
+  border-radius: var(--radius-control);
+  padding: 10px 14px;
+}
+
+input[type='date'],
+input[type='number'] {
+  color-scheme: dark;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-micro);
+  margin-top: var(--space-stack);
+}
+</style>

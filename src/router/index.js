@@ -19,7 +19,8 @@ const routes = [
   { path: '/paths/:slug', name: 'path', component: PathView },
   { path: '/admin', name: 'admin', component: AdminListView },
   { path: '/admin/article/:id', name: 'admin-article', component: AdminFormView },
-  // Must stay last.
+  { path: '/admin/new', name: 'admin-new', component: AdminFormView },
+  // Must stay last or all routes will go to not found.
   { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFoundView },
 ]
 

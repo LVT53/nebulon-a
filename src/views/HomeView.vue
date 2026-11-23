@@ -1,23 +1,24 @@
 <script setup>
 import { computed, ref } from 'vue'
-import { articles, paths } from '@/data'
+import { paths } from '@/data'
+import { store } from '@/stores/articles.js'
 import FeatureCard from '@/components/FeatureCard.vue'
 import CompactCard from '@/components/CompactCard.vue'
 import AppButton from '@/components/AppButton.vue'
 
-const featured = articles[0]
-const secondary = articles.slice(1, 4)
-const gridArticles = articles.slice(4)
+const featured = computed(() => store.items[0])
+const secondary = computed(() => store.items.slice(1, 4))
+const gridArticles = computed(() => store.items.slice(4))
 
 const showAll = ref(false)
 
 const visibleArticles = computed(() =>
-  showAll.value ? gridArticles : gridArticles.slice(0, 6),
+    showAll.value ? gridArticles.value : gridArticles.value.slice(0, 6),
 )
 
 function pathMinutes(path) {
   return path.steps.reduce((total, id) => {
-    const article = articles.find((entry) => entry.id === id)
+    const article = store.items.find((entry) => entry.id === id)
     return total + (article?.readingTime ?? 0)
   }, 0)
 }
