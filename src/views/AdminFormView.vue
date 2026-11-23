@@ -1,21 +1,33 @@
 <script setup>
-import { reactive } from 'vue'
-import { useRouter, RouterLink } from 'vue-router'
+import { reactive, computed } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 import { categories } from '@/data'
 import { store } from '@/stores/articles.js'
 import AppButton from '@/components/AppButton.vue'
 
 const router = useRouter()
+const route = useRoute()
+
+const existing = computed(() =>
+  route.params.id ? store.items.find((article) => article.id === route.params.id) : null,
+)
+
+function bodyToText(blocks) {
+  return (blocks ?? [])
+      .filter((block) => block.type === 'p')
+      .map((block) => block.text)
+      .join('\n\n')
+}
 
 const draft = reactive({
-  title: '',
-  excerpt: '',
-  category: 'deep-space',
-  date: new Date().toISOString().slice(0, 10),
-  readingTime: 1,
-  image: '/img/uranus.jpg',
-  credit: '',
-  body: '',
+  title: existing.value?.title || '',
+  excerpt: existing.value?.excerpt ?? '',
+  category: existing.value?.category ?? 'deep-space',
+  date: existing.value?.date ?? new Date().toISOString().slice(0, 10),
+  readingTime: existing.value?.readingTime ?? 1,
+  image: existing.value?.image ?? '/img/city-sky.jpg',
+  credit: existing.value?.credit ?? '',
+  body: bodyToText(existing.value?.body),
 })
 
 function toBody(text) {
@@ -26,8 +38,10 @@ function toBody(text) {
       .map((paragraph) => ({ type: 'p', text: paragraph }))
 }
 
+const heading = computed(() => (existing.value ? 'Edit article' : 'New article'))
+
 function save() {
-  store.create({
+  const payload = {
     title: draft.title,
     excerpt: draft.excerpt,
     category: draft.category,
@@ -35,17 +49,26 @@ function save() {
     readingTime: draft.readingTime,
     image: draft.image,
     credit: draft.credit,
-    body: toBody(draft.body),
-  })
+    body:
+        existing.value && draft.body === bodyToText(existing.value.body)
+            ? existing.value.body
+            : toBody(draft.body),
+  }
+
+  if (existing.value) {
+    store.update(existing.value.id, payload)
+  } else {
+    store.create(payload)
+  }
+
   router.push('/admin')
-}
+  }
 </script>
 
 <template>
   <div class="container section">
     <p class="eyebrow">Admin</p>
-    <h1>New article</h1>
-
+    <h1>{{ heading }}</h1>
     <form class="form" @submit.prevent="save">
       <h2>Basics</h2>
 

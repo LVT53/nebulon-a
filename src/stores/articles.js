@@ -21,4 +21,10 @@ export const store = reactive({
 
         this.items.unshift({ ...payload, id: slug, slug, pathId: null, step: null })
     },
+    update(id, payload) {
+        const article = this.items.find((entry) => entry.id === id)
+        if (!article) return false
+        Object.assign(article, payload)
+        return true
+    },
 })

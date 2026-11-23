@@ -35,6 +35,7 @@ function categoryLabel(slug) {
         <td><AppChip :label="categoryLabel(article.category)" /></td>
         <td class="meta">{{ formatDate(article.date) }}</td>
         <td class="actions">
+          <AppButton variant="secondary" @click="router.push(`/admin/article/${article.id}`)">Edit</AppButton>
           <AppButton variant="ghost" @click="store.remove(article.id)">Delete</AppButton>
         </td>
       </tr>
@@ -79,6 +80,8 @@ td {
 }
 
 .actions {
-  text-align: right;
+  display: flex;
+  gap: var(--space-micro);
+  justify-content: flex-end;
 }
 </style>
