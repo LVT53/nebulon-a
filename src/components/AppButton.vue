@@ -1,12 +1,18 @@
 <script setup>
+import { RouterLink } from 'vue-router'
+
 defineProps({
   variant: { type: String, default: 'primary' },
   type: { type: String, default: 'button' },
+  to: { type: String, default: '' },
 })
 </script>
 
 <template>
-  <button :type="type" :class="['btn', `btn--${variant}`]">
+  <RouterLink v-if="to" :to="to" :class="['btn', `btn--${variant}`]">
+    <slot />
+  </RouterLink>
+  <button v-else :type="type" :class="['btn', `btn--${variant}`]">
     <slot />
   </button>
 </template>

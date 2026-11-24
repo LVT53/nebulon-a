@@ -70,42 +70,47 @@ function save() {
     <p class="eyebrow">Admin</p>
     <h1>{{ heading }}</h1>
     <form class="form" @submit.prevent="save">
-      <h2>Basics</h2>
+      <div>
+        <div>
+          <h2>Basics</h2>
 
-      <label for="title">Title</label>
-      <input id="title" v-model="draft.title" type="text" />
+          <label for="title">Title</label>
+          <input id="title" v-model="draft.title" type="text" />
 
-      <label for="excerpt">Excerpt</label>
-      <textarea id="excerpt" v-model="draft.excerpt" rows="2"></textarea>
+          <label for="excerpt">Excerpt</label>
+          <textarea id="excerpt" v-model="draft.excerpt" rows="2"></textarea>
 
-      <label for="category">Category</label>
-      <select id="category" v-model="draft.category">
-        <option v-for="category in categories" :key="category.id" :value="category.slug">
-          {{ category.label }}
-        </option>
-      </select>
+          <label for="category">Category</label>
+          <select id="category" v-model="draft.category">
+            <option v-for="category in categories" :key="category.id" :value="category.slug">
+              {{ category.label }}
+            </option>
+          </select>
 
-      <label for="date">Published</label>
-      <input id="date" v-model="draft.date" type="date" />
+          <label for="date">Published</label>
+          <input id="date" v-model="draft.date" type="date" />
 
-      <label for="readingTime">Reading time (minutes)</label>
-      <input id="readingTime" v-model.number="draft.readingTime" type="number" min="1" />
+          <label for="readingTime">Reading time (minutes)</label>
+          <input id="readingTime" v-model.number="draft.readingTime" type="number" min="1" />
+        </div>
+        <div>
+          <h2>Media</h2>
 
-      <h2>Media</h2>
+          <label for="image">Image path</label>
+          <input id="image" v-model="draft.image" type="text" />
+          <p class="meta">Hint for myself: /img/uranus.jpg, /img/voyager.jpg or /img/rings.jpg</p>
 
-      <label for="image">Image path</label>
-      <input id="image" v-model="draft.image" type="text" />
-      <p class="meta">Hint for myself: /img/uranus.jpg, /img/voyager.jpg or /img/rings.jpg</p>
+          <label for="credit">Credit</label>
+          <input id="credit" v-model="draft.credit" type="text" />
+        </div>
+        <div>
+          <h2>Body</h2>
 
-      <label for="credit">Credit</label>
-      <input id="credit" v-model="draft.credit" type="text" />
-
-      <h2>Body</h2>
-
-      <label for="body">Article text</label>
-      <textarea id="body" v-model="draft.body" rows="10"></textarea>
-      <p class="meta">Leave a blank line between paragraphs.</p>
-
+          <label for="body">Article text</label>
+          <textarea id="body" v-model="draft.body" rows="10"></textarea>
+          <p class="meta">Leave a blank line between paragraphs.</p>
+        </div>
+      </div>
       <div class="actions">
         <AppButton type="submit">Save article</AppButton>
         <AppButton variant="secondary" @click="router.push('/admin')">Cancel</AppButton>
@@ -116,10 +121,21 @@ function save() {
 
 <style scoped>
 .form {
-  max-width: 520px;
   display: flex;
   flex-direction: column;
   gap: var(--space-micro);
+}
+
+.form div {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 10px 25px;
+}
+
+.form div div {
+  display: flex;
+  flex-direction: column;
 }
 
 h2 {

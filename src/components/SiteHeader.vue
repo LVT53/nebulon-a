@@ -62,7 +62,6 @@ import { Search } from '@lucide/vue';
 .nav {
   display: flex;
   gap: var(--space-stack);
-  margin-left: auto;
 }
 
 .actions {
