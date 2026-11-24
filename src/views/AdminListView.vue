@@ -24,16 +24,16 @@ function categoryLabel(slug) {
       <thead>
       <tr>
         <th scope="col">Title</th>
-        <th scope="col">Category</th>
-        <th scope="col">Published</th>
+        <th scope="col" class="hidden-mobile">Category</th>
+        <th scope="col" class="hidden-mobile">Published</th>
         <th scope="col">Actions</th>
       </tr>
       </thead>
       <tbody>
       <tr v-for="article in store.items" :key="article.id">
         <td class="title">{{ article.title }}</td>
-        <td><AppChip :label="categoryLabel(article.category)" /></td>
-        <td class="meta">{{ formatDate(article.date) }}</td>
+        <td class="hidden-mobile"><AppChip :label="categoryLabel(article.category)" /></td>
+        <td class="meta hidden-mobile">{{ formatDate(article.date) }}</td>
         <td class="actions">
           <AppButton variant="secondary" @click="router.push(`/admin/article/${article.id}`)">Edit</AppButton>
           <AppButton variant="ghost" @click="store.remove(article.id)">Delete</AppButton>
@@ -83,5 +83,15 @@ td {
   display: flex;
   gap: var(--space-micro);
   justify-content: flex-end;
+}
+
+@media (max-width: 900px) {
+  .hidden-mobile {
+    display: none;
+  }
+
+  .title {
+    padding-right: 15px;
+  }
 }
 </style>

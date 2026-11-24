@@ -172,4 +172,10 @@ input[type='number'] {
   gap: var(--space-micro);
   margin-top: var(--space-stack);
 }
+
+@media (max-width: 900px) {
+  .form div {
+    flex-direction: column;
+  }
+}
 </style>
