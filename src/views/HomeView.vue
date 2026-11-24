@@ -56,7 +56,7 @@ function pathMinutes(path) {
         <ul class="paths">
           <li v-for="path in paths" :key="path.id" class="path-row">
             <div class="path-text">
-              <h3>{{ path.title }}</h3>
+              <RouterLink :to="`/paths/${path.slug}`"><h3>{{ path.title }}</h3></RouterLink>
               <p class="meta">{{ path.steps.length }} steps · {{ pathMinutes(path) }} min</p>
             </div>
 
@@ -142,6 +142,11 @@ function pathMinutes(path) {
 
 .path-text h3 {
   margin-bottom: 2px;
+  transition: color var(--transition-quick);
+}
+
+.path-text h3:hover {
+  color: var(--colour-accent);
 }
 
 .path-text p {

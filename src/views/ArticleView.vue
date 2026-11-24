@@ -6,6 +6,7 @@ import { formatDate } from '@/utils/format'
 import AppChip from '@/components/AppChip.vue'
 import GistBox from '@/components/GistBox.vue'
 import CompactCard from '@/components/CompactCard.vue'
+import PathFooter from "@/components/PathFooter.vue";
 
 const route = useRoute()
 
@@ -92,15 +93,12 @@ const nextInPath = computed(() => {
           </figure>
         </template>
 
-        <aside v-if="nextInPath" class="path-next">
-          <div>
-            <p class="eyebrow">Next in {{ path.title }}</p>
-            <RouterLink :to="`/article/${nextInPath.slug}`" class="path-next-title">
-              {{ nextInPath.title }}
-            </RouterLink>
-          </div>
-          <RouterLink :to="`/paths/${path.slug}`" class="meta">See the path →</RouterLink>
-        </aside>
+        <PathFooter
+            v-if="path && article"
+            :path="path"
+            :article="article"
+            :next="nextInPath"
+        />
       </div>
     </div>
 
