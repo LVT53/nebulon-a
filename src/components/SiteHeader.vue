@@ -50,8 +50,9 @@ function closeMenu() {
             class="nav-link search-icon"
         >
           <Search
-              :size="18"
-              :stroke-width="1"
+              :size="20"
+              :stroke-width="1.5"
+              color="#f4f4f5"
           />
         </RouterLink>
       </div>
@@ -63,8 +64,9 @@ function closeMenu() {
             class="nav-link search-icon"
         >
           <Search
-              :size="18"
-              :stroke-width="1"
+              :size="20"
+              :stroke-width="1.5"
+              color="#f4f4f5"
           />
         </RouterLink>
 
@@ -77,6 +79,7 @@ function closeMenu() {
           <Menu
               :size="24"
               :stroke-width="1.5"
+              color="#f4f4f5"
           />
         </button>
       </div>
@@ -96,42 +99,34 @@ function closeMenu() {
           >
             NEBULON-A
           </RouterLink>
-
-          <button
-              class="mobile-menu-button mobile-close"
-              type="button"
-              aria-label="Close navigation"
-              @click="closeMenu"
-          >
-            <X
-                :size="24"
-                :stroke-width="1.5"
-            />
-          </button>
-        </div>
-
-        <div class="container mobile-menu-content">
-          <div class="mobile-actions">
-            <RouterLink
-                to="/paths"
-                class="nav-link"
-                @click="closeMenu"
-            >
-              Learning Paths
-            </RouterLink>
-
+          <div class="mobile-header-actions">
             <RouterLink
                 to="/search"
                 class="nav-link search-icon"
                 @click="closeMenu"
             >
               <Search
-                  :size="18"
-                  :stroke-width="1"
+                  :size="20"
+                  :stroke-width="1.5"
+                  color="#f4f4f5"
               />
             </RouterLink>
+            <button
+                class="mobile-menu-button mobile-close"
+                type="button"
+                aria-label="Close navigation"
+                @click="closeMenu"
+            >
+              <X
+                  :size="24"
+                  :stroke-width="1.5"
+                  color="#f4f4f5"
+              />
+            </button>
           </div>
+        </div>
 
+        <div class="container mobile-menu-content">
           <nav
               class="mobile-nav"
               aria-label="Mobile Categories"
@@ -145,6 +140,13 @@ function closeMenu() {
             >
               {{ category.label }}
             </RouterLink>
+            <RouterLink
+                to="/paths"
+                class="mobile-nav-link"
+                @click="closeMenu"
+            >
+              Learning Paths
+            </RouterLink>
           </nav>
         </div>
       </div>
@@ -155,6 +157,11 @@ function closeMenu() {
 <style scoped>
 .site-header {
   border-bottom: 1px solid var(--colour-hairline);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--colour-background);
+  box-shadow: 0 4px 10px 0 var(--colour-background);
 }
 
 .header-row {
@@ -209,7 +216,8 @@ function closeMenu() {
 }
 
 .search-icon {
-  margin-bottom: -10px;
+  margin-bottom: -4px;
+  margin-top: 4px;
   border-bottom: none;
 }
 
@@ -224,6 +232,10 @@ function closeMenu() {
   background: transparent;
   color: var(--colour-text-primary);
   cursor: pointer;
+}
+
+.mobile-header-actions {
+  display: none;
 }
 
 /* FULLSCREEN MENU */
@@ -249,16 +261,10 @@ function closeMenu() {
   padding-top: 2rem;
 }
 
-.mobile-actions {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  margin-bottom: 2.5rem;
-}
-
 .mobile-nav {
   display: flex;
   flex-direction: column;
+  gap: var(--space-stack);
 }
 
 .mobile-nav-link {
@@ -305,6 +311,12 @@ function closeMenu() {
 
   .mobile-menu-button {
     display: flex;
+  }
+
+  .mobile-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
 }
 </style>
