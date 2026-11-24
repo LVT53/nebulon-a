@@ -20,7 +20,7 @@ function categoryLabel(slug) {
     </RouterLink>
 
     <div class="body">
-      <AppChip :label="categoryLabel(article.category)" />
+      <AppChip :label="categoryLabel(article.category)" :to="`/category/${article.category}`" />
 
       <h3 class="title">
         <RouterLink :to="`/article/${article.slug}`">{{ article.title }}</RouterLink>

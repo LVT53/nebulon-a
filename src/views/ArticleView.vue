@@ -44,7 +44,7 @@ const nextInPath = computed(() => {
       </div>
 
       <div class="hero-meta">
-        <AppChip :label="categoryLabel" />
+        <AppChip :label="categoryLabel" :to="`/category/${article.category}`" />
 
         <h1>{{ article.title }}</h1>
 
@@ -251,6 +251,7 @@ const nextInPath = computed(() => {
   font-size: var(--type-card);
   line-height: var(--type-card-line);
   font-weight: 500;
+  transition: color var(--transition-quick);
 }
 
 .path-next-title:hover {

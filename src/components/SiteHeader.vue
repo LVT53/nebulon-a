@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import { categories } from '@/data'
+import { Search } from '@lucide/vue';
 </script>
 
 <template>
@@ -21,7 +22,12 @@ import { categories } from '@/data'
 
       <div class="actions">
         <RouterLink to="/paths" class="nav-link">Learning Paths</RouterLink>
-        <RouterLink to="/search" class="nav-link">Search</RouterLink>
+        <RouterLink to="/search" class="nav-link search-icon">
+          <Search
+              :size="18"
+              :stroke-width="1"
+          />
+        </RouterLink>
       </div>
     </div>
   </header>
@@ -46,6 +52,11 @@ import { categories } from '@/data'
   font-weight: 500;
   letter-spacing: 0.04em;
   white-space: nowrap;
+  transition: color var(--transition-quick);
+}
+
+.wordmark:hover {
+  color: var(--colour-accent);
 }
 
 .nav {
@@ -63,7 +74,6 @@ import { categories } from '@/data'
   font-size: var(--type-meta);
   line-height: var(--type-meta-line);
   color: var(--colour-text-secondary);
-  padding-bottom: 2px;
   border-bottom: 2px solid transparent;
   transition:
     color var(--transition-quick),
@@ -78,6 +88,11 @@ import { categories } from '@/data'
 .nav-link.router-link-active {
   color: var(--colour-text-primary);
   border-bottom-color: var(--colour-accent);
+}
+
+.nav-link.search-icon {
+  margin-bottom: -10px;
+  border-bottom: none;
 }
 
 @media (max-width: 899px) {

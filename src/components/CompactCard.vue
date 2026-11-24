@@ -2,6 +2,7 @@
 import { RouterLink } from 'vue-router'
 import { categories } from '@/data'
 import { formatDate } from '@/utils/format'
+import AppChip from "@/components/AppChip.vue";
 
 defineProps({
   article: { type: Object, required: true },
@@ -14,24 +15,26 @@ function categoryLabel(slug) {
 
 <template>
   <article class="compact-card">
-    <p class="eyebrow">{{ categoryLabel(article.category) }}</p>
+    <AppChip :label="categoryLabel(article.category)" :to="`/category/${article.category}`" />
 
-    <h3 class="title">
-      <RouterLink :to="`/article/${article.slug}`">{{ article.title }}</RouterLink>
-    </h3>
+    <div>
+      <h3 class="title">
+        <RouterLink :to="`/article/${article.slug}`">{{ article.title }}</RouterLink>
+      </h3>
 
-    <p class="meta">{{ formatDate(article.date) }} · {{ article.readingTime }} min read</p>
+      <p class="meta">{{ formatDate(article.date) }} · {{ article.readingTime }} min read</p>
+    </div>
   </article>
 </template>
 
 <style scoped>
 .compact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 15px;
   padding: var(--space-stack) 0;
   border-bottom: 1px solid var(--colour-hairline);
-}
-
-.compact-card:last-child {
-  border-bottom: 0;
 }
 
 .eyebrow {
