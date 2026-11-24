@@ -163,6 +163,12 @@ const nextInPath = computed(() => {
   width: 100%;
 }
 
+.rule {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .hero-meta .meta {
   margin: 0;
 }

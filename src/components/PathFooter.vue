@@ -43,6 +43,9 @@ const readMinutes = computed(() => props.next?.readingTime ?? 0)
 
 <style scoped>
 .path-footer {
+  width: 782px;
+  max-width: 100%;
+  margin-inline: auto;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -109,6 +112,12 @@ const readMinutes = computed(() => props.next?.readingTime ?? 0)
   .path-footer {
     width: 918px;
     max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .path-footer {
+    width: 100%;
   }
 }
 </style>
