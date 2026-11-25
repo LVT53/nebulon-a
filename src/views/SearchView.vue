@@ -10,6 +10,7 @@ const router = useRouter()
 
 const query = ref(String(route.query.q ?? ''))
 
+// Get input value from search field, convert to lowercase, return matching items.
 const results = computed(() => {
   const q = query.value.trim().toLowerCase()
   if (!q) return store.items
@@ -50,6 +51,7 @@ watch(query, (value) => {
       <FeatureCard v-for="article in results" :key="article.id" :article="article" />
     </div>
 
+    <!-- "Not found" state. Show a card that explains nothing was found and guide the user to one of 3 sample categories. -->
     <div v-else class="empty">
       <h1>Nothing matches "{{ query.trim() }}".</h1>
       <p class="meta">Check the spelling, or start from one of these categories instead.</p>

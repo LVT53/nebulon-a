@@ -1,12 +1,16 @@
 # Nebulon-A
 
-A space article site for curious beginners. Long-form pieces organised into
-ordered **learning paths**, so a reader can work through a topic instead of
-guessing what to read next.
+Nebulon-A is a space article site for curious beginners.
+Long-form pieces organised into ordered learning paths, so a reader can work through a topic in a fun way.
+It is built for my Front-End module assignment 1.
 
-Built with Vue 3, Vite and Vue Router. Phase 1 of the TUS Front-End brief:
-research, design system, Figma library, wireframes and this prototype — the
-Home and Article views, built from the shared components.
+Built with Vue 3, Vite and Vue Router + Lucide icons. 
+
+Phase 1 of the TUS Front-End Project (done):
+Research, Design system, Figma library, Wireframes. Small prototype built with shared Vue components, correct routing.
+
+Phase 2 of the TUS Front-End Project (in progress):
+Full content version of the Figma design laid out in Vue, Unpersisted admin CRUD for managing articles, browser testing, functional testing, explanatory code comments, and interactive features.
 
 ## Setup
 
@@ -17,8 +21,6 @@ npm install
 npm run dev      # http://localhost:5173
 npm run build    # production build to dist/
 ```
-
-The site runs only from static data in `src/data`.
 
 ## Design
 
@@ -34,15 +36,19 @@ tokens documented in [docs/guides/design-system.md](docs/guides/design-system.md
 - [Content plan](docs/guides/content-plan.md)
 - [Design system](docs/guides/design-system.md)
 - [Wireframes](docs/wireframes/)
+- [Iteration log](docs/iteration-log.md)
+- [Browser testing](docs/browser-testing.md)
 
 ## Notes
 
 - Twenty-four articles over six categories. **Notice: AI was used to draft these articles.**
-- Photography is real: every image was pulled from the NASA Image Library. Credit lines
+- Photography: every image was pulled from the NASA Image Library API. Credit lines
   live in the data, and [docs/image-credits.tsv](docs/image-credits.tsv) records the
   search, the record id and the credit behind each file.
 - Read progress is session-only and clears on refresh, by design.
-- The admin screens are local state only - no persistence, no auth.
+- The admin screens are local state only, so no persistence and auth.
+- Paths and Path views are stubs only on Instructor's request.
+- No form validation or error handling in AdminFormView as of yet.
 
 ## Author
 

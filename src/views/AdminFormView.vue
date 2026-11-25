@@ -55,7 +55,9 @@ function save() {
             : toBody(draft.body),
   }
 
-  if (existing.value) {
+  payload.error = payload.title.includes(String) ? '' : 'Please enter a valid title.';
+
+  if (!payload.error && existing.value) {
     store.update(existing.value.id, payload)
   } else {
     store.create(payload)
@@ -69,7 +71,7 @@ function save() {
   <div class="container section">
     <p class="eyebrow">Admin</p>
     <h1>{{ heading }}</h1>
-    <form class="form" @submit.prevent="save">
+    <form class="form" @submit.prevent="save" novalidate>
       <div>
         <div>
           <h2>Basics</h2>
