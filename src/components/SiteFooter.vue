@@ -5,11 +5,11 @@ import { RouterLink } from 'vue-router'
 <template>
   <footer class="site-footer">
     <div class="container footer-row">
-      <span class="wordmark">NEBULON-A</span>
+      <div class="wordmark">NEBULON-A</div>
       <nav class="links" aria-label="Site">
         <RouterLink to="/admin" class="link">Admin</RouterLink>
       </nav>
-      <span class="meta">Imagery: NASA media library</span>
+      <div class="meta">Imagery: NASA media library</div>
     </div>
   </footer>
 </template>
@@ -29,6 +29,11 @@ import { RouterLink } from 'vue-router'
   padding-block: 12px;
 }
 
+.footer-row nav,
+.footer-row div {
+  width: 33.33%;
+}
+
 .wordmark {
   font-family: var(--font-display);
   font-size: 11px;
@@ -39,6 +44,7 @@ import { RouterLink } from 'vue-router'
 .links {
   display: flex;
   gap: var(--space-control);
+  justify-content: center;
 }
 
 .link {
@@ -51,11 +57,24 @@ import { RouterLink } from 'vue-router'
   color: var(--colour-text-primary);
 }
 
+.meta {
+  text-align: right;
+}
+
 @media (max-width: 599px) {
   .footer-row {
     flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-micro);
+    align-items: center;
+    gap: var(--space-control);
+  }
+
+  .wordmark {
+    text-align: center;
+  }
+
+  .meta {
+    width: 100%;
+    text-align: center;
   }
 }
 </style>

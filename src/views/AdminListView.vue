@@ -46,9 +46,14 @@ function categoryLabel(slug) {
 <style scoped>
 .head {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   margin-bottom: var(--space-stack);
+}
+
+.head .meta {
+  text-align: center;
+  flex-grow: 4;
 }
 
 .table {
