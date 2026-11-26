@@ -173,7 +173,7 @@ function closeMenu() {
 }
 
 .wordmark {
-  font-family: var(--font-display);
+  font-family: var(--font-display), sans-serif;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -210,7 +210,7 @@ function closeMenu() {
   border-bottom-color: var(--colour-hairline);
 }
 
-.nav-link.router-link-active {
+.nav-link {
   color: var(--colour-text-primary);
   border-bottom-color: var(--colour-accent);
 }
@@ -283,7 +283,7 @@ function closeMenu() {
   color: var(--colour-accent);
 }
 
-.mobile-nav-link.router-link-active {
+.mobile-nav-link {
   color: var(--colour-accent);
 }
 
