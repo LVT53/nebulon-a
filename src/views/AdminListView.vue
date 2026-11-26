@@ -10,6 +10,12 @@ const router = useRouter()
 function categoryLabel(slug) {
   return categories.find((category) => category.slug === slug)?.label ?? slug
 }
+
+function confirmDelete(article) {
+  if (window.confirm(`Delete "${article.title}"? This cannot be undone.`)) {
+    store.remove(article.id)
+  }
+}
 </script>
 
 <template>
@@ -36,7 +42,7 @@ function categoryLabel(slug) {
         <td class="meta hidden-mobile">{{ formatDate(article.date) }}</td>
         <td class="actions">
           <AppButton variant="secondary" @click="router.push(`/admin/article/${article.id}`)">Edit</AppButton>
-          <AppButton variant="ghost" @click="store.remove(article.id)">Delete</AppButton>
+          <AppButton variant="ghost" @click="confirmDelete(article)">Delete</AppButton>
         </td>
       </tr>
       </tbody>

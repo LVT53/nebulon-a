@@ -287,20 +287,6 @@ function closeMenu() {
   color: var(--colour-accent);
 }
 
-/* ANIMATION */
-
-.mobile-menu-enter-active,
-.mobile-menu-leave-active {
-  transition:
-      opacity 0.2s ease,
-      transform 0.2s ease;
-}
-
-.mobile-menu-enter-from,
-.mobile-menu-leave-to {
-  opacity: 0;
-}
-
 /* RESPONSIVE */
 
 @media (max-width: 899px) {
