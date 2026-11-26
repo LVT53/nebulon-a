@@ -8,6 +8,7 @@ import AppButton from '@/components/AppButton.vue'
 const router = useRouter()
 const route = useRoute()
 
+// /admin/new and /admin/article/:id share this component. A computed re-reads if the id changes.
 const existing = computed(() =>
     route.params.id ? store.items.find((article) => article.id === route.params.id) : null,
 )
@@ -86,6 +87,7 @@ function validate() {
 
 function save() {
   if (!validate()) {
+    // First key assigned = first rule that failed. Input ids match these keys.
     document.getElementById(Object.keys(errors)[0])?.focus()
     return
   }
@@ -98,6 +100,7 @@ function save() {
     readingTime: Number(draft.readingTime),
     image: draft.image.trim(),
     credit: draft.credit.trim(),
+    // Textarea untouched, then write the original blocks back, so figures and quotes survive an edit.
     body:
         existing.value && draft.body === bodyToText(existing.value.body)
             ? existing.value.body

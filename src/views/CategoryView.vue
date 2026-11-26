@@ -13,6 +13,7 @@ const category = computed(() => categories.find((c) => c.slug === route.params.s
 const items = computed(() =>
     store.items
         .filter((article) => article.category === route.params.slug)
+        // Path articles in reading order first, then standalones newest-first.
         .sort((a, b) => {
           if (a.step && b.step) return a.step - b.step
           if (a.step) return -1
