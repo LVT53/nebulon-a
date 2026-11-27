@@ -207,12 +207,12 @@ function closeMenu() {
 
 .nav-link:hover {
   color: var(--colour-text-primary);
-  border-bottom-color: var(--colour-hairline);
+  border-bottom-color: var(--colour-accent);
 }
 
 .nav-link {
   color: var(--colour-text-primary);
-  border-bottom-color: var(--colour-accent);
+  border-bottom-color: rgba(0,0,0,0);
 }
 
 .search-icon {
